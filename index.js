@@ -12,6 +12,11 @@ class MyObject extends EventEmitter{
 
         this.emit('loaded');
     }
+
+    substract(param_1,param_2){
+
+        return param_1-param_2;
+    }
 }
 
 
