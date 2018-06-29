@@ -24,6 +24,9 @@ let myObject = new MyObject();
 
 myObject.on('loaded',()=>{
     console.log('The object was loaded!');
+
+    console.log(myObject.substract(4,2));
+    
 });
 
 myObject.initialize();
