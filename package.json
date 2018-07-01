@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "FAF",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.30.0"
+  }
 }

@@ -1,33 +1,11 @@
-const EventEmitter = require('events');
+const MyEvent = require('./myEvent');
+const config = require('config');
 
 
-class MyObject extends EventEmitter{
-
-    initialize(){
-
-        this.loaded();
-    }
-
-    loaded(){
-
-        this.emit('loaded');
-    }
-
-    substract(param_1,param_2){
-
-        return param_1-param_2;
-    }
-}
-
-
-let myObject = new MyObject();
-
-myObject.on('loaded',()=>{
+let myEvent = new MyEvent();
+myEvent.on('loaded', () => {
     console.log('The object was loaded!');
-
-    console.log(myObject.substract(4,2));
-    
 });
+myEvent.initialize();
 
-myObject.initialize();
-
+console.log(config.get('Security.crypt.seed'));
