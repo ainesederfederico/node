@@ -3,11 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const engine = require('ejs-locals');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// use ejs-locals for all ejs templates:
+app.engine('ejs', engine);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
