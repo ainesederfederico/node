@@ -1,5 +1,6 @@
 const MyEvent = require('./myEvent');
 const config = require('config');
+const logger = require('./log/logger');
 
 
 let myEvent = new MyEvent();
@@ -8,4 +9,4 @@ myEvent.on('loaded', () => {
 });
 myEvent.initialize();
 
-console.log(config.get('Security.crypt.seed'));
+logger.info(config.get('Security.crypt.seed'));
