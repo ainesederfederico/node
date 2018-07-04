@@ -1,6 +1,6 @@
 <% layout('../layouts/default') -%>
 
-<h1><%=title%></h1>
+
 <ul>
     <% users.forEach(function(user) { %>
         <li><%= user.id %> - <%= user.name %> <a href="./<%= user.id %>">View</a></li>
