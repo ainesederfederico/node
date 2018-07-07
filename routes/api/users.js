@@ -3,13 +3,13 @@ const router = express.Router();
 const Joi = require('joi');
 
 
-const VIEWS_DIR = './users/';
 
 var users = [
   {id:1,name:"fede",email:'fede@nomail.com'},
   {id:2,name:"coco",email:'coco@nomail.com'},
   {id:3,name:"ale",email:'ale@nomail.com'}
 ];
+
 
 const userSchema = {
   id: Joi.number(),
@@ -18,30 +18,26 @@ const userSchema = {
 };
 
 
-router.get('/', function (req, res, next) {
-  res.render(VIEWS_DIR + 'index', {
-    title: 'Users',
-    users: users
-  });
+router.get('/', function(req, res, next) {
+  res.send(users);
 });
 
-router.get('/:id', function (req, res, next) {
+router.get('/:id', function(req, res, next) {
 
-  const user = users.find((x) => {
-    return x.id == req.params.id;
-  });
+  const user = users.find((x)=>{ return x.id == req.params.id; });
 
-  if (!user) return res.status(404).send("User not found");
+  const {error,value} = Joi.validate(user,userSchema);
 
-  res.render(VIEWS_DIR + 'view', {
-    title: 'View User',
-    user: user
-  });
+  if(!user) return res.status(404).send("User not found");
 
+  res.send(user);
 
+  
 });
 
-router.post('/', function (req, res, next) {
+
+router.post('/',function(req,res,next){
+
 
   const {error} = Joi.validate(req.body,userSchema);
 
@@ -59,8 +55,6 @@ router.post('/', function (req, res, next) {
   res.send(user);
 
 });
-
-
 
 
 module.exports = router;
