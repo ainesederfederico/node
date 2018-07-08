@@ -10,7 +10,7 @@
             "name": "Launch Program",
             "runtimeExecutable": "nodemon",
             "program": "${workspaceFolder}/bin/www",
-            "restart": true,
+            "restart": false,
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
         }

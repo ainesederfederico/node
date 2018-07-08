@@ -3,6 +3,6 @@
 
 <ul>
     <% users.forEach(function(user) { %>
-        <li><%= user.id %> - <%= user.name %> <a href="./<%= user.id %>">View</a></li>
+        <li><%= user.id %> - <%= user.name %> <a href="./view/<%= user.id %>">View</a></li>
     <% }); %>
 </ul>
