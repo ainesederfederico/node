@@ -5,6 +5,6 @@ exports.index = function (req, res, next) {
     debug('Home page was called!');
 
     res.render('index', {
-        title: 'Erp'
+        title: 'Home'
     });
 };

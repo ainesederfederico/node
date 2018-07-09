@@ -1,7 +1,8 @@
 {
-    "Security":{
-        "crypt":{
-            "seed":"12345"
-        }
+    "data": {
+        "name": "Erp",
+        "author": "Federico Aineseder",
+        "email": "ainesederfederico@gmail.com",
+        "description": "Node as piece of cake"
     }
 }

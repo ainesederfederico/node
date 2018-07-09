@@ -1,13 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var morgan = require('morgan');
+
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 const engine = require('ejs-locals');
+const globalLocals = require('./middlewares/app_data');
 
 
-
-var app = express();
+const app = express();
 
 // use ejs-locals for all ejs templates:
 app.engine('ejs', engine);
@@ -22,11 +23,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//load the global data from config/default.json
+app.use(globalLocals);
 
-var homeRouter = require('./routes/home');
-var usersRouter = require('./routes/users');
+const homeRouter = require('./routes/home');
+const usersRouter = require('./routes/users');
 
-var apiUsersRouter = require('./routes/api/users');
+const apiUsersRouter = require('./routes/api/users');
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);

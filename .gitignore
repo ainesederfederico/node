@@ -1,4 +1,6 @@
 /node_modules
 /log/*.log
 package-lock.json
+/public/scripts/libs/*.*
+/public/styles/libs/*.*
 

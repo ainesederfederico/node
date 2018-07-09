@@ -1,7 +1,8 @@
 {
-    "Security":{
-        "crypt":{
-            "seed":"54321"
-        }
+    "data": {
+        "name": "Erp",
+        "siteTitle": "Erp Fun",
+        "author": "Federico Aineseder",
+        "description": "Node Mvc Creator"
     }
 }

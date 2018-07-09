@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <% include ../partials/head %>
-  <% include ../partials/scripts %>
+<% include ../partials/head %>
+
+
   <body>
-    <h1><%=title%></h1>
-    <% include ../partials/server_messages %>
-    <%-body -%>
+    <% include ../partials/header %>
+
+
+      <div class="container">
+        <h1>
+          <%=title%>
+        </h1>
+
+        <% include ../partials/server_messages %>
+          <%-body -%>
+      </div>
+
+
+      <% include ../partials/footer %>
   </body>
-  <% include ../partials/footer %>
+ 
+  
+
+  <% include ../partials/scripts %>
+
 </html>
