@@ -11,4 +11,11 @@ function concat_js_libs () {
     .pipe(gulp.dest('./public/scripts/libs/'));
 }
 
-gulp.task('default',gulp.series(concat_js_libs));
+function concat_css_libs () {
+  return gulp.src(['./node_modules/bootstrap/dist/css/bootstrap.min.css',])
+    .pipe(concat('all.css'))
+    .pipe(gulp.dest('./public/styles/libs/'));
+}
+
+
+gulp.task('default',gulp.series(concat_js_libs,concat_css_libs));
