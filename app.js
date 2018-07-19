@@ -28,11 +28,14 @@ app.use(globalLocals);
 
 const homeRouter = require('./routes/home');
 const usersRouter = require('./routes/users');
+const accountsRouter = require('./routes/accounts');
 
 const apiUsersRouter = require('./routes/api/users');
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
+
+app.use('/accounts', accountsRouter);
 
 app.use('/api/users', apiUsersRouter);
 

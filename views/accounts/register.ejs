@@ -1,0 +1,19 @@
+<% layout('../layouts/default') -%>
+
+
+<form method="POST" action="./register">
+
+    <div class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <label for="username" class="col-sm-2 col-form-label">Username</label>
+            <input type="text" class="form-control" name='username' id="username" value="">
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <input type="password" class="form-control" name='password' id="password">
+        </div>
+
+        <input type="submit" class="btn btn-primary float-right" value="Log In"></input>
+    </div>
+
+</form>
